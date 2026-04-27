@@ -46,7 +46,7 @@ type DownloadOptions struct {
 	Path string `json:"path"`
 	// Name overrides the resource name if set
 	Name string `json:"name,omitempty"`
-	// SelectFiles is the list of file indices to download (nil means all)
+	// SelectFiles is the list of file indices to download (nil means all files are downloaded)
 	SelectFiles []int `json:"selectFiles,omitempty"`
 	// Extra contains protocol-specific download options
 	Extra interface{} `json:"extra,omitempty"`
@@ -60,7 +60,7 @@ const (
 	DownloadStatusReady Status = iota
 	// DownloadStatusRunning indicates the task is actively downloading
 	DownloadStatusRunning
-	// DownloadStatusPause indicates the task has been paused
+	// DownloadStatusPause indicates the task has been paused by the user
 	DownloadStatusPause
 	// DownloadStatusWait indicates the task is waiting for a slot
 	DownloadStatusWait
