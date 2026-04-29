@@ -86,8 +86,7 @@ func (s Status) String() string {
 	case DownloadStatusDone:
 		return "done"
 	default:
-		// unknown status values are surfaced explicitly rather than silently
-		// returning an empty string, which makes debugging much easier
+		// unknown status values fall back to "unknown" for safer logging
 		return "unknown"
 	}
 }
